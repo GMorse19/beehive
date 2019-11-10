@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
     <head>
       <title>Example</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,15 +13,23 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <!-- <h1>Browser Template</h1> -->
-      <h1 class="main-header">
-              BEEHIVE
 
-            </h1>
-            <p class="catchphrase">Discover what the buzz is all about!</p>
-            <div class="catchphrase message"></div>
-<!-- Sign-Up -->
-      <div class='sign-up signup'>
+  <!-- <div class="container"> -->
+
+      <div class="col-12">
+        <h1 class="main-header">
+          BEEHIVE
+
+        </h1>
+        <p class="catchphrase">Discover what the buzz is all about!</p>
+        <div class="catchphrase message"></div>
+      </div>
+
+      <div class="col-4">
+        <div class="form-structor">
+          <div class="landing">
+            <div class='sign-up signup'>
+
               <h2 class="form-title1" id="signup">Sign up</h2>
               <form class="form-holder" id='sign-up'>
                 <!-- <legend>Sign-up</legend> -->
@@ -52,6 +61,135 @@
                     <button class="link">Sign Out</button>
                   </form>
                 </div>
+
+              <!-- </li>
+            </ul> -->
+<!--
+          </div>
+        </div>
+      </div>
+
+      <div class="col-8 public-listings">
+
+        <div id="find-listing"> -->
+          <div class="index">
+            <form id="index">
+              <legend>Events</legend>
+              <button>Show all</button>
+            </form>
+          </div>
+        <!-- </div> -->
+
+        <div id="find-user-listing">
+          <div class="index">
+            <form id="index-auth">
+              <legend>All Auth Events</legend>
+              <button>Show</button>
+            </form>
+          </div>
+        </div>
+
+        <!-- <div class="homepage"> -->
+          <div id="profile">
+            <div class="user-index">
+              <form id="user-index">
+                <legend>Index of user-Listings</legend>
+                <button>Index user-Listings</button>
+              </form>
+            </div>
+
+            <div class="rsvp-index">
+              <form id="rsvp-index">
+                <legend>Index of user-rsvps</legend>
+                <button>Index user-rsvps</button>
+              </form>
+            </div>
+          </div>
+
+          <div id="create-listing">
+            <div class="new-listing">
+              <form id="new-listing">
+                <legend>Create Listing</legend>
+                <input required type="text" name="listing[listing_name]" placeholder="Event name...">
+                <input required type="text" name="listing[location]" placeholder="Enter Location...">
+                <input required type="date" name="listing[date]" placeholder="Enter Date...">
+                <input type="time" name="listing[start_time]" placeholder="Enter Start Time...">
+                <input type="time" name="listing[end_time]" placeholder="Enter End Time...">
+                <input required type="text" name="listing[description]" placeholder="Enter Description...">
+                <button class="button">Submit Listing</button>
+              </form>
+            </div>
+          </div>
+
+          <div id="change-pw">
+            <div class="change-password">
+              <form id="change-password">
+                <legend>Change Password</legend>
+                <input type="password" name="passwords[old]" placeholder='Enter old password'>
+                <input type="password" name="passwords[new]" placeholder='Enter new password'>
+                <button>Change Password</button>
+              </form>
+            </div>
+          </div>
+        <!-- </div> -->
+
+        <div class="work work2 listing-index overflow-auto"></div>
+        <div class="listing-show"></div>
+
+      </div> <!-- COL 8 -->
+
+
+      <div class="col-12 post-patch-delete">
+        <!-- <section class="listings"> -->
+
+          <div class="update-listing">
+            <form id="update-listing">
+              <legend>Update A Listing</legend>
+              <input required id="listing-id" type="text" name="listing[id]" placeholder="Enter listing id...">
+              <input id="listing-name" type="text" name="listing[listing_name]" placeholder="Enter listing name...">
+              <input id="listing-location" type="text" name="listing[location]" placeholder="Enter Location...">
+              <input id="listing-start_time" type="time" name="listing[start_time]" placeholder="Enter Start Time...">
+              <input id="listing-end_time" type="time" name="listing[end_time]" placeholder="Enter End Time...">
+              <input id="listing-description" type="text" name="listing[description]" placeholder="Enter Description...">
+              <button class="button">Update Listing</button>
+            </form>
+          </div>
+        </div> <!-- COL 12 -->
+          <br>
+        <div class="col-12 post-patch-delete">
+          <div class="delete-listing">
+            <form id="delete-listing">
+              <legend>Destroy Listing</legend>
+              <input id="destroy-listing" required type="text" name="listing[id]" placeholder="Enter listing ID...">
+              <button>Destroy Listing</button>
+            </form>
+          </div>
+
+
+        <section class="rsvps">
+          <div>
+            <form class="create-rsvp">
+              <legend>Create rsvp</legend>
+              <input id="create-rsvp" required type="text" name="rsvp[listing]" placeholder="Enter rsvp ID...">
+              <button>Create rsvp</button>
+            </form>
+          </div>
+          <br>
+
+          <!-- <div>
+          <form id="delete-rsvp">
+            <legend>Destroy Rsvp</legend>
+            <input id="destroy-rsvp" required type="text" name="rsvp[id]" placeholder="Enter rsvp ID...">
+            <button>Destroy Rsvp</button>
+          </form>
+        </div> -->
+        </section>
+      </div>
+
+
+    </div> <!-- class row -->
+  </div> <!-- class container-->
+
 
 
     </body>
