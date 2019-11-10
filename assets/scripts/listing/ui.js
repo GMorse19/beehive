@@ -19,7 +19,7 @@ const failureMessage = function (newText) {
 }
 
 const onCreateListingSuccess = function (data) {
-  console.log(data)
+  // console.log(data)
   store.listing = data.listing
   successMessage('Can\'t wait for ' + data.listing.listing_name + '!')
   // $('form').trigger('reset')
@@ -30,7 +30,7 @@ const onCreateListingFailure = function () {
 }
 
 const onShowListingSuccess = function (data) {
-  console.log(data.listing)
+  // console.log(data.listing)
   successMessage('What a stupendous listing! ' + data.listing.listing_name)
   // $('.listing-show').html(oneListing(event))
   // const oneListingHTML = oneListing({listing: data.listing})
@@ -58,7 +58,7 @@ const onUpdateFailure = function () {
 // }
 
 const onGetListingsSuccess = (data) => {
-  console.log(data)
+  // console.log(data)
   successMessage('Be sure to sign-up to RSVP!')
   // $('#find-listing').hide()
   // console.log(‘get data is ‘, data)
@@ -72,11 +72,11 @@ const onGetListingsFailure = function () {
 }
 
 const onGetAuthListingsSuccess = (data) => {
-  console.log(data)
+  // console.log(data)
   store.listings = data.listings
   successMessage('Check out what\'s happening!')
   // $('#find-user-listing').hide()
-  console.log('get data is ' + store.listings)
+  // console.log('get data is ' + store.listings)
   // const showAuthListingsHTML = showAuthListings({listings: data.listings})
   // $('.listing-index').html('')
   // $('.listing-index').html(showAuthListingsHTML)
@@ -87,7 +87,7 @@ const onGetAuthListingsFailure = function () {
 }
 
 const onGetUserListingsSuccess = (data) => {
-  console.log(data)
+  // console.log(data)
   successMessage('Your listings!')
   // const showListingsHTML = showListings({listings: data.listings})
   // $(`.listing-index`).html(showListingsHTML)

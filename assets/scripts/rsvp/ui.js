@@ -31,7 +31,7 @@ const onCreateRsvpFailure = function () {
 
 const onIndexRsvpSuccess = function (data) {
   store.rsvps = data.rsvps
-  console.log(data)
+  // console.log(data)
   successMessage('Your RSVPs')
   // const showRsvpsHTML = showRsvps({rsvps: store.rsvps})
   // $('.listing-index').html('')
