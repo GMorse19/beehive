@@ -62,12 +62,12 @@ const onChangePasswordFailure = function () {
 const onSignOutSuccess = function () {
   successMessage(`Goodbye! Come back soon!`)
   // landing()
-  $('.listing-index').show()
-  $('.listing-index').html('')
-  $('#find-listing').show()
-  $('#find-user-listing').hide()
-  $('.post-patch-delete').hide()
-  $('body').css('height', '100vh')
+  // $('.listing-index').show()
+  // $('.listing-index').html('')
+  // $('#find-listing').show()
+  // $('#find-user-listing').hide()
+  // $('.post-patch-delete').hide()
+  // $('body').css('height', '100vh')
 }
 
 const onSignOutFailure = function () {
