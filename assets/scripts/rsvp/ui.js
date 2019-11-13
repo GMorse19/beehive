@@ -1,8 +1,8 @@
 'use strict'
 
 const store = require('../store')
-// const showRsvps = require('../templates/all-rsvp.handlebars')
-// const createRsvp = require('../templates/create-rsvp.handlebars')
+const showRsvps = require('../templates/all-rsvp.handlebars')
+const createRsvp = require('../templates/create-rsvp.handlebars')
 
 const successMessage = function (newText) {
   $('.message').text(newText)
@@ -18,11 +18,11 @@ const failureMessage = function (newText) {
 }
 
 const onCreateRsvpSuccess = function (data) {
-  store.rsvp = data.rsvp
-  successMessage('You\'re now RSVP\'d to: ' + data.rsvp)
-  // const oneRsvpHTML = createRsvp({listing: data.listing})
-  // $('.listing-index').html('')
-  // $('.listing-index').html(oneRsvpHTML)
+  store.rsvp = data.rsvp.listing
+  successMessage('You\'re now RSVP\'d to: ' + store.rsvp)
+  const oneRsvpHTML = createRsvp({listing: data.rsvp})
+  $('.listing-index').html('')
+  $('.listing-index').html(oneRsvpHTML)
 }
 
 const onCreateRsvpFailure = function () {
@@ -33,9 +33,9 @@ const onIndexRsvpSuccess = function (data) {
   store.rsvps = data.rsvps
   // console.log(data)
   successMessage('Your RSVPs')
-  // const showRsvpsHTML = showRsvps({rsvps: store.rsvps})
-  // $('.listing-index').html('')
-  // $('.listing-index').html(showRsvpsHTML)
+  const showRsvpsHTML = showRsvps({rsvps: store.rsvps})
+  $('.listing-index').html('')
+  $('.listing-index').html(showRsvpsHTML)
 }
 
 // const onIndexRsvpSuccess = function (data) {

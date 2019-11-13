@@ -24,6 +24,16 @@ const showListing = function (id) {
   })
 }
 
+const showUserListing = function (id) {
+  return $.ajax({
+    method: 'GET',
+    url: config.apiUrl + `/listings/${id}`,
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 const updateListing = function (name, location, description, id) {
   return $.ajax({
     method: 'PATCH',
@@ -51,7 +61,10 @@ const getListings = function () {
 const getAuthListings = function () {
   return $.ajax({
     method: 'GET',
-    url: config.apiUrl + '/listings/'
+    url: config.apiUrl + '/listings/',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
   })
 }
 
@@ -82,5 +95,6 @@ module.exports = {
   getListings,
   deleteListing,
   getUserListings,
-  getAuthListings
+  getAuthListings,
+  showUserListing
 }

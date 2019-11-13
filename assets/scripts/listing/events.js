@@ -4,12 +4,16 @@ const store = require('../store')
 const getFormFields = require('../../../lib/get-form-fields.js')
 const api = require('./api')
 const ui = require('./ui')
+// const formatDateTime = require('../../../lib/format-date-time.js')
 
 const onCreateListing = function (event) {
   event.preventDefault()
   const form = event.target
-  const formData = getFormFields(form)
-  api.createListing(formData)
+  const data = getFormFields(form)
+  // const data = getFormFields(event.target)
+  // data.listing = formatDateTime.formatDatesForDisplay(data.listing)
+  // console.log(data.listing)
+  api.createListing(data)
     .then(ui.onCreateListingSuccess)
     .catch(ui.onCreateListingFailure)
 }
@@ -21,6 +25,15 @@ const onShowListing = function (event) {
   api.showListing(eventId)
     .then(ui.onShowListingSuccess)
     .catch(ui.onShowListingFailure)
+}
+
+const onShowUserListing = function (event) {
+  event.preventDefault()
+  // const id = $('#find-listing').val()
+  const eventId = $(event.target).attr('data-id')
+  api.showUserListing(eventId)
+    .then(ui.onShowUserListingSuccess)
+    .catch(ui.onShowUserListingFailure)
 }
 
 const onUpdateListing = function (event) {
@@ -71,5 +84,6 @@ module.exports = {
   onGetListings,
   onDeleteListing,
   onGetUserListings,
-  onGetAuthListings
+  onGetAuthListings,
+  onShowUserListing
 }
